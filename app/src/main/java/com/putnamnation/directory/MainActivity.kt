@@ -14,6 +14,7 @@ import com.putnamnation.directory.ui.common.UserViewModel
 import com.putnamnation.directory.ui.navigation.BottomNav
 import com.putnamnation.directory.ui.navigation.LeftNav
 import com.putnamnation.directory.ui.navigation.NavigationGraph
+import com.putnamnation.directory.ui.theme.AppTheme
 import kotlin.math.min
 
 enum class WindowSizeClass { COMPACT, MEDIUM, EXPANDED }
@@ -26,7 +27,9 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            MainScreenView(userViewModel = viewModel, computeWindowSizeClasses())
+            AppTheme() {
+                MainScreenView(userViewModel = viewModel, computeWindowSizeClasses())
+            }
         }
 
     }
