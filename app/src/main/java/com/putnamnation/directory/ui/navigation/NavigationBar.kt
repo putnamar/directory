@@ -55,9 +55,7 @@ fun BottomNav(navController: NavController) {
             )
         }
     }
-
 }
-
 
 @Composable
 fun LeftNav(navController: NavController) {
@@ -91,7 +89,6 @@ fun LeftNav(navController: NavController) {
                 selected = currentRoute == item.screenRoute,
                 onClick = {
                     navController.navigate(item.screenRoute) {
-
                         navController.graph.startDestinationRoute?.let { screen_route ->
                             popUpTo(screen_route) {
                                 saveState = true
@@ -103,7 +100,5 @@ fun LeftNav(navController: NavController) {
                 }
             )
         }
-
     }
-
 }
